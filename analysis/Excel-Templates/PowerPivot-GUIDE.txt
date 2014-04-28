@@ -1,0 +1,7 @@
+EXCEL POWERPIVOT GUIDE - Inventory DW (Excel 2013)
+1. Enable PowerPivot: File > Options > Add-ins > COM Add-ins > PowerPivot
+2. Import Data: PowerPivot > Manage > From Database > SQL Server
+3. Create Relationships: Diagram View > Drag FK to PK
+4. DAX Measures: Total:=SUM([Amount]), YTD:=TOTALYTD([Total],'Date'[Date])
+5. Pivot Table: Insert > PivotTable > Use PowerPivot Data
+6. Add Charts: Select pivot > Insert > Charts

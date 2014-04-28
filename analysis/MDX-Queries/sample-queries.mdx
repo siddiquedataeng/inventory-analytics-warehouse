@@ -1,0 +1,5 @@
+-- MDX Queries: Inventory DW
+SELECT [Measures].[Amount] ON COLUMNS, [Date].[Year].Members ON ROWS FROM [Inventory-Analytics-Warehouse]
+SELECT [Measures].[Amount] ON COLUMNS, TOPCOUNT([Product].[Name].Members, 10, [Measures].[Amount]) ON ROWS FROM [Inventory-Analytics-Warehouse]
+WITH MEMBER [Measures].[YTD] AS AGGREGATE(YTD([Date].[Month]), [Measures].[Amount])
+SELECT {[Measures].[Amount], [Measures].[YTD]} ON COLUMNS, [Date].[Year].Members ON ROWS FROM [Inventory-Analytics-Warehouse]
